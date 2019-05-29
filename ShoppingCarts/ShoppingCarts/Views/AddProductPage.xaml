@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCarts.Views.AddProductPage"
+             Title="Add Product">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Add new product:" FontSize="Large" TextColor="Black" Margin="10" />
+            <TableView Intent="Settings" BackgroundColor="White">
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell x:Name="txtName" Label="Product Name" Keyboard="Text" Text="{Binding Name}" />
+                        <EntryCell x:Name="txtImageUrl" Label="Image Url" Keyboard="Text" Text="{Binding ImageUrl}" />
+                        <EntryCell x:Name="txtShortDescription" Label="Short Description" Keyboard="Text" Text="{Binding ShortDescription}" />
+                        <EntryCell x:Name="txtDescription" Label="Description" Keyboard="Text" Text="{Binding Description}" />
+                        <ViewCell>
+                            <ContentView>
+                                <ContentView.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="10,0" Android="0,0" />
+                                </ContentView.Padding>
+                                <ContentView.Content>
+                                    <Button  Text="Save" TextColor="White" Command="{Binding OnSaveClicked}" BackgroundColor="#808080" Margin="10,0,10,0" HeightRequest="40" HorizontalOptions="End" />
+                                </ContentView.Content>
+                            </ContentView>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
